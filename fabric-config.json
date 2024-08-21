@@ -1,0 +1,224 @@
+{
+	"orgs": {
+		"Dinas": {
+			"email": "dinas.admin@palmmapping.co.id",
+			"password": "Dinas@PalmMapping2024",
+			"msp": "DinasMSP",
+			"connectionProfile": {
+				"name": "fablo-test-network-dinas",
+				"version": "1.0.0",
+				"client": {
+					"organization": "Dinas",
+					"connection": {
+						"timeout": {
+							"peer": {
+								"endorser": "500"
+							}
+						}
+					}
+				},
+				"organization": {
+					"Dinas": {
+						"mspid": "DinasMSP",
+						"peers": [
+							"peer0.dinas.palmmapping.co.id"
+						],
+						"certificateAuthorities": [
+							"ca.dinas.palmmapping.co.id"
+						]
+					}
+				},
+				"peers": {
+					"peer0.dinas.palmmapping.co.id": {
+						"url": "grpcs://localhost:7041",
+						"tlsCACerts": {
+							"pem": "-----BEGIN CERTIFICATE-----\nMIICdjCCAhygAwIBAgIRAJlAQuh9k8OY4THI5+vLqDMwCgYIKoZIzj0EAwIwgYQx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMSAwHgYDVQQKExdkaW5hcy5wYWxtbWFwcGluZy5jby5pZDEmMCQG\nA1UEAxMddGxzY2EuZGluYXMucGFsbW1hcHBpbmcuY28uaWQwHhcNMjQwODIxMTIw\nMjAwWhcNMzQwODE5MTIwMjAwWjCBhDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNh\nbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xIDAeBgNVBAoTF2RpbmFz\nLnBhbG1tYXBwaW5nLmNvLmlkMSYwJAYDVQQDEx10bHNjYS5kaW5hcy5wYWxtbWFw\ncGluZy5jby5pZDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABMy2a5LHV+EjxOH1\ng7Sc22Kk3BhN03DbXul+YQ1ZLLSVEbqcjQrazUyfrrQD3Oc4VxvNz2Plt6Vu7hfO\nrE5EPz6jbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYI\nKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgibaZ2pceUze2JfCy\nBSFeGE4vpw5oCr62HLvv1FzUHYcwCgYIKoZIzj0EAwIDSAAwRQIgTtyRxr5dYG9H\nCB1xx1NzJb5jG1fmv8gGsnrvjMUGWioCIQDRY6YdMTeesRJ0geWyOhBTsqmqZR3E\nzO97pOKYA/dRzA==\n-----END CERTIFICATE-----\n"
+						},
+						"grpcOptions": {
+							"ssl-target-name-override": "peer0.dinas.palmmapping.co.id",
+							"hostnameOverride": "peer0.dinas.palmmapping.co.id"
+						}
+					}
+				},
+				"certificateAuthorities": {
+					"ca.dinas.palmmapping.co.id": {
+						"url": "http://localhost:7040",
+						"caName": "ca.dinas.palmmapping.co.id",
+						"tlsCACerts": {
+							"pem": "-----BEGIN CERTIFICATE-----\nMIICdjCCAhygAwIBAgIRAJlAQuh9k8OY4THI5+vLqDMwCgYIKoZIzj0EAwIwgYQx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMSAwHgYDVQQKExdkaW5hcy5wYWxtbWFwcGluZy5jby5pZDEmMCQG\nA1UEAxMddGxzY2EuZGluYXMucGFsbW1hcHBpbmcuY28uaWQwHhcNMjQwODIxMTIw\nMjAwWhcNMzQwODE5MTIwMjAwWjCBhDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNh\nbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xIDAeBgNVBAoTF2RpbmFz\nLnBhbG1tYXBwaW5nLmNvLmlkMSYwJAYDVQQDEx10bHNjYS5kaW5hcy5wYWxtbWFw\ncGluZy5jby5pZDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABMy2a5LHV+EjxOH1\ng7Sc22Kk3BhN03DbXul+YQ1ZLLSVEbqcjQrazUyfrrQD3Oc4VxvNz2Plt6Vu7hfO\nrE5EPz6jbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYI\nKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgibaZ2pceUze2JfCy\nBSFeGE4vpw5oCr62HLvv1FzUHYcwCgYIKoZIzj0EAwIDSAAwRQIgTtyRxr5dYG9H\nCB1xx1NzJb5jG1fmv8gGsnrvjMUGWioCIQDRY6YdMTeesRJ0geWyOhBTsqmqZR3E\nzO97pOKYA/dRzA==\n-----END CERTIFICATE-----\n"
+						},
+						"httpOptions": {
+							"verify": false
+						}
+					}
+				}
+			}
+		},
+		"Koperasi": {
+			"email": "koperasi.admin@palmmapping.co.id",
+			"password": "Koperasi@PalmMapping2024",
+			"msp": "KoperasiMSP",
+			"connectionProfile": {
+				"name": "fablo-test-network-koperasi",
+				"version": "1.0.0",
+				"client": {
+					"organization": "Koperasi",
+					"connection": {
+						"timeout": {
+							"peer": {
+								"endorser": "500"
+							}
+						}
+					}
+				},
+				"organization": {
+					"Koperasi": {
+						"mspid": "KoperasiMSP",
+						"peers": [
+							"peer0.koperasi.palmmapping.co.id"
+						],
+						"certificateAuthorities": [
+							"ca.koperasi.palmmapping.co.id"
+						]
+					}
+				},
+				"peers": {
+					"peer0.koperasi.palmmapping.co.id": {
+						"url": "grpcs://localhost:7061",
+						"tlsCACerts": {
+							"pem": "-----BEGIN CERTIFICATE-----\nMIICgjCCAiegAwIBAgIQBoSAimZGpMfYSl+1N3/+oTAKBggqhkjOPQQDAjCBijEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xIzAhBgNVBAoTGmtvcGVyYXNpLnBhbG1tYXBwaW5nLmNvLmlkMSkw\nJwYDVQQDEyB0bHNjYS5rb3BlcmFzaS5wYWxtbWFwcGluZy5jby5pZDAeFw0yNDA4\nMjExMjAyMDBaFw0zNDA4MTkxMjAyMDBaMIGKMQswCQYDVQQGEwJVUzETMBEGA1UE\nCBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEjMCEGA1UEChMa\na29wZXJhc2kucGFsbW1hcHBpbmcuY28uaWQxKTAnBgNVBAMTIHRsc2NhLmtvcGVy\nYXNpLnBhbG1tYXBwaW5nLmNvLmlkMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE\nWbitDyH/0fnYSsGTOzt80bGNLhH83wUV3Ngz5iFoNoreLFn4IGPx0hUxpSVAVuBQ\n85Saip3qJTfSMXawmbFzu6NtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQG\nCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCAl\nqH07807MHdXhST+VLTXDzUc8M1pbU8XCYOewKhrjzzAKBggqhkjOPQQDAgNJADBG\nAiEA5Chj/cHJFwsWrxmxuc1ji9Xco6VJRgfBv/l8L17cOjgCIQCU2nPjRElDh73S\nN7sZN18NypHEOe6YcmvBZAtVOURsHw==\n-----END CERTIFICATE-----\n"
+						},
+						"grpcOptions": {
+							"ssl-target-name-override": "peer0.koperasi.palmmapping.co.id",
+							"hostnameOverride": "peer0.koperasi.palmmapping.co.id"
+						}
+					}
+				},
+				"certificateAuthorities": {
+					"ca.koperasi.palmmapping.co.id": {
+						"url": "http://localhost:7060",
+						"caName": "ca.koperasi.palmmapping.co.id",
+						"tlsCACerts": {
+							"pem": "-----BEGIN CERTIFICATE-----\nMIICgjCCAiegAwIBAgIQBoSAimZGpMfYSl+1N3/+oTAKBggqhkjOPQQDAjCBijEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xIzAhBgNVBAoTGmtvcGVyYXNpLnBhbG1tYXBwaW5nLmNvLmlkMSkw\nJwYDVQQDEyB0bHNjYS5rb3BlcmFzaS5wYWxtbWFwcGluZy5jby5pZDAeFw0yNDA4\nMjExMjAyMDBaFw0zNDA4MTkxMjAyMDBaMIGKMQswCQYDVQQGEwJVUzETMBEGA1UE\nCBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEjMCEGA1UEChMa\na29wZXJhc2kucGFsbW1hcHBpbmcuY28uaWQxKTAnBgNVBAMTIHRsc2NhLmtvcGVy\nYXNpLnBhbG1tYXBwaW5nLmNvLmlkMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE\nWbitDyH/0fnYSsGTOzt80bGNLhH83wUV3Ngz5iFoNoreLFn4IGPx0hUxpSVAVuBQ\n85Saip3qJTfSMXawmbFzu6NtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQG\nCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCAl\nqH07807MHdXhST+VLTXDzUc8M1pbU8XCYOewKhrjzzAKBggqhkjOPQQDAgNJADBG\nAiEA5Chj/cHJFwsWrxmxuc1ji9Xco6VJRgfBv/l8L17cOjgCIQCU2nPjRElDh73S\nN7sZN18NypHEOe6YcmvBZAtVOURsHw==\n-----END CERTIFICATE-----\n"
+						},
+						"httpOptions": {
+							"verify": false
+						}
+					}
+				}
+			}
+		},
+		"Petani": {
+			"email": "petani.admin@palmmapping.co.id",
+			"password": "Petani@PalmMapping2024",
+			"msp": "PetaniMSP",
+			"connectionProfile": {
+				"name": "fablo-test-network-petani",
+				"version": "1.0.0",
+				"client": {
+					"organization": "Petani",
+					"connection": {
+						"timeout": {
+							"peer": {
+								"endorser": "500"
+							}
+						}
+					}
+				},
+				"organization": {
+					"Petani": {
+						"mspid": "PetaniMSP",
+						"peers": [
+							"peer0.petani.palmmapping.co.id"
+						],
+						"certificateAuthorities": [
+							"ca.petani.palmmapping.co.id"
+						]
+					}
+				},
+				"peers": {
+					"peer0.petani.palmmapping.co.id": {
+						"url": "grpcs://localhost:7081",
+						"tlsCACerts": {
+							"pem": "-----BEGIN CERTIFICATE-----\nMIICezCCAiCgAwIBAgIRAN3M0CwIZtXxtQP2KdkOOG8wCgYIKoZIzj0EAwIwgYYx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMSEwHwYDVQQKExhwZXRhbmkucGFsbW1hcHBpbmcuY28uaWQxJzAl\nBgNVBAMTHnRsc2NhLnBldGFuaS5wYWxtbWFwcGluZy5jby5pZDAeFw0yNDA4MjEx\nMjAyMDBaFw0zNDA4MTkxMjAyMDBaMIGGMQswCQYDVQQGEwJVUzETMBEGA1UECBMK\nQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEhMB8GA1UEChMYcGV0\nYW5pLnBhbG1tYXBwaW5nLmNvLmlkMScwJQYDVQQDEx50bHNjYS5wZXRhbmkucGFs\nbW1hcHBpbmcuY28uaWQwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASJWmzrYN5v\nzG+lF+s7LK8KleWqpxJPMOLYmnVSxRfOfwzEX2aLsI8/b30hM+Z57+HBy5Tw7jLQ\nJ5bg+jKmHlffo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUH\nAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIDbauA/HAbpw\nzxuMPWUhLfUnCgqsbALtZ35FZZg+ujNwMAoGCCqGSM49BAMCA0kAMEYCIQC7kiIj\n0agTz1YtYL2ReiGiAUX25xHpkZ8ju8QbT0r5NwIhANbWx39mSN17Ti4dvieSf3NH\nZN0+h1So3t7RbJiwc1FV\n-----END CERTIFICATE-----\n"
+						},
+						"grpcOptions": {
+							"ssl-target-name-override": "peer0.petani.palmmapping.co.id",
+							"hostnameOverride": "peer0.petani.palmmapping.co.id"
+						}
+					}
+				},
+				"certificateAuthorities": {
+					"ca.petani.palmmapping.co.id": {
+						"url": "http://localhost:7080",
+						"caName": "ca.petani.palmmapping.co.id",
+						"tlsCACerts": {
+							"pem": "-----BEGIN CERTIFICATE-----\nMIICezCCAiCgAwIBAgIRAN3M0CwIZtXxtQP2KdkOOG8wCgYIKoZIzj0EAwIwgYYx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMSEwHwYDVQQKExhwZXRhbmkucGFsbW1hcHBpbmcuY28uaWQxJzAl\nBgNVBAMTHnRsc2NhLnBldGFuaS5wYWxtbWFwcGluZy5jby5pZDAeFw0yNDA4MjEx\nMjAyMDBaFw0zNDA4MTkxMjAyMDBaMIGGMQswCQYDVQQGEwJVUzETMBEGA1UECBMK\nQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEhMB8GA1UEChMYcGV0\nYW5pLnBhbG1tYXBwaW5nLmNvLmlkMScwJQYDVQQDEx50bHNjYS5wZXRhbmkucGFs\nbW1hcHBpbmcuY28uaWQwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASJWmzrYN5v\nzG+lF+s7LK8KleWqpxJPMOLYmnVSxRfOfwzEX2aLsI8/b30hM+Z57+HBy5Tw7jLQ\nJ5bg+jKmHlffo20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUH\nAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIDbauA/HAbpw\nzxuMPWUhLfUnCgqsbALtZ35FZZg+ujNwMAoGCCqGSM49BAMCA0kAMEYCIQC7kiIj\n0agTz1YtYL2ReiGiAUX25xHpkZ8ju8QbT0r5NwIhANbWx39mSN17Ti4dvieSf3NH\nZN0+h1So3t7RbJiwc1FV\n-----END CERTIFICATE-----\n"
+						},
+						"httpOptions": {
+							"verify": false
+						}
+					}
+				}
+			}
+		}
+	},
+	"channels": {
+		"pemetaan-hutan-channel": {
+			"Dinas": [
+				"peer0"
+			],
+			"Koperasi": [
+				"peer0"
+			],
+			"Petani": [
+				"peer0"
+			]
+		},
+		"legalitas-lahan-channel": {
+			"Dinas": [
+				"peer0"
+			],
+			"Koperasi": [
+				"peer0"
+			],
+			"Petani": [
+				"peer0"
+			]
+		},
+		"pemetaan-kebun-channel": {
+			"Dinas": [
+				"peer0"
+			],
+			"Koperasi": [
+				"peer0"
+			],
+			"Petani": [
+				"peer0"
+			]
+		}
+	},
+	"chaincodes": [
+		{
+			"name": "pemetaan-hutan-chaincode",
+			"version": "1.0.0",
+			"lang": "node",
+			"channel": "pemetaan-hutan-channel",
+			"directory": "./chaincodes/pemetaan-hutan-chaincode"
+		},
+		{
+			"name": "legalitas-lahan-chaincode",
+			"version": "1.0.0",
+			"lang": "node",
+			"channel": "legalitas-lahan-channel",
+			"directory": "./chaincodes/legalitas-lahan-chaincode"
+		},
+		{
+			"name": "pemetaan-kebun-chaincode",
+			"version": "1.0.0",
+			"lang": "node",
+			"channel": "pemetaan-kebun-channel",
+			"directory": "./chaincodes/pemetaan-kebun-chaincode"
+		}
+	]
+}

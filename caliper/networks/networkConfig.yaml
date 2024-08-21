@@ -1,0 +1,48 @@
+name: Caliper test
+version: "2.0.0"
+
+caliper:
+  blockchain: fabric
+  sutOptions:
+    mutualTls: true
+
+channels:
+  - channelName: pemetaan-kebun-channel
+    contracts:
+      - id: pemetaan-kebun-chaincode
+
+organizations:
+  - mspid: DinasMSP
+    identities:
+      certificates:
+        - name: "User1"
+          clientPrivateKey:
+            path: "../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/dinas.palmmapping.co.id/users/User1@dinas.palmmapping.co.id/msp/keystore/priv-key.pem"
+          clientSignedCert:
+            path: "../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/dinas.palmmapping.co.id/users/User1@dinas.palmmapping.co.id/msp/signcerts/User1@dinas.palmmapping.co.id-cert.pem"
+    connectionProfile:
+      path: "../../learn-1/fablo-target/fabric-config/connection-profiles/connection-profile-dinas.yaml"
+      discover: true
+  - mspid: KoperasiMSP
+    identities:
+      certificates:
+        - name: "User2"
+          clientPrivateKey:
+            path: "../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/koperasi.palmmapping.co.id/users/User1@koperasi.palmmapping.co.id/msp/keystore/priv-key.pem"
+          clientSignedCert:
+            path: "../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/koperasi.palmmapping.co.id/users/User1@koperasi.palmmapping.co.id/msp/signcerts/User1@koperasi.palmmapping.co.id-cert.pem"
+    connectionProfile:
+      path: "../../learn-1/fablo-target/fabric-config/connection-profiles/connection-profile-koperasi.yaml"
+      discover: true
+  - mspid: PetaniMSP
+    identities:
+      certificates:
+        - name: "User3"
+          clientPrivateKey:
+            path: "../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/petani.palmmapping.co.id/users/User1@petani.palmmapping.co.id/msp/keystore/priv-key.pem"
+          clientSignedCert:
+            path: "../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/petani.palmmapping.co.id/users/User1@petani.palmmapping.co.id/msp/signcerts/User1@petani.palmmapping.co.id-cert.pem"
+    connectionProfile:
+      path: "../../learn-1/fablo-target/fabric-config/connection-profiles/connection-profile-petani.yaml"
+      discover: true
+

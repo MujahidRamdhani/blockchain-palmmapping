@@ -1,0 +1,171 @@
+name: Fabric
+version: "1.0"
+mutual-tls: false
+
+caliper:
+  blockchain: fabric
+  # command:
+  #   start: export FABRIC_VERSION=1.4.4;export FABRIC_CA_VERSION=1.4.4;docker-compose -f networks/fabric/docker-compose/2org1peercouchdb_solo_raft/docker-compose-tls.yaml up -d;sleep 10s
+  #   end: docker-compose -f networks/fabric/docker-compose/2org1peercouchdb_solo_raft/docker-compose-tls.yaml down;(test -z \"$(docker ps -aq)\") || docker rm $(docker ps -aq);(test -z \"$(docker images dev* -q)\") || docker rmi $(docker images dev* -q);rm -rf /tmp/hfc-*
+
+info:
+  Version: 2.1.0
+  Size: 3 Orgs with 1 Peer
+  Orderer: Raft
+  Distribution: Single Host
+  StateDB: CouchDB
+
+clients:
+  client0.dinas.palmmapping.co.id:
+    client:
+      organization: dinas.palmmapping.co.id
+      credentialStore:
+        path: /tmp/hfc-kvs/dinas.palmmapping.co.id
+        cryptoStore:
+          path: /tmp/hfc-cvs/dinas.palmmapping.co.id
+      clientPrivateKey:
+        path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/dinas.palmmapping.co.id/users/User1@dinas.palmmapping.co.id/msp/keystore/priv-key.pem
+      clientSignedCert:
+        path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/dinas.palmmapping.co.id/users/User1@dinas.palmmapping.co.id/msp/signcerts/User1@dinas.palmmapping.co.id-cert.pem
+
+  client0.koperasi.palmmapping.co.id:
+    client:
+      organization: koperasi.palmmapping.co.id
+      credentialStore:
+        path: /tmp/hfc-kvs/koperasi.palmmapping.co.id
+        cryptoStore:
+          path: /tmp/hfc-cvs/koperasi.palmmapping.co.id
+      clientPrivateKey:
+        path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/koperasi.palmmapping.co.id/users/User1@koperasi.palmmapping.co.id/msp/keystore/priv-key.pem
+      clientSignedCert:
+        path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/koperasi.palmmapping.co.id/users/User1@koperasi.palmmapping.co.id/msp/signcerts/User1@koperasi.palmmapping.co.id-cert.pem
+
+  client0.petani.palmmapping.co.id:
+    client:
+      organization: petani.palmmapping.co.id
+      credentialStore:
+        path: /tmp/hfc-kvs/petani.palmmapping.co.id
+        cryptoStore:
+          path: /tmp/hfc-cvs/petani.palmmapping.co.id
+      clientPrivateKey:
+        path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/petani.palmmapping.co.id/users/User1@petani.palmmapping.co.id/msp/keystore/priv-key.pem
+      clientSignedCert:
+        path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/petani.palmmapping.co.id/users/User1@petani.palmmapping.co.id/msp/signcerts/User1@petani.palmmapping.co.id-cert.pem
+
+channels:
+  pemetaan-kebun-channel:
+    # configBinary: networks/fabric/base/mychannel.tx
+    created: true
+    contracts: [{ "id": "pemetaan-kebun-chaincode", "version": "1", "language" : "node" }]
+    definition:
+      capabilities: []
+      consortium: "SampleConsortium"
+      msps: ["DinasMSP", "KoperasiMSP", "PetaniMSP"]
+      version: 0
+    orderers:
+      - orderer0.palmmapping-orderer-group.orderer.palmmapping.co.id
+      - orderer1.palmmapping-orderer-group.orderer.palmmapping.co.id
+      - orderer2.palmmapping-orderer-group.orderer.palmmapping.co.id
+    peers:
+      peer0.dinas.palmmapping.co.id:
+        eventSource: true
+      peer0.koperasi.palmmapping.co.id:
+        eventSource: true
+      peer0.petani.palmmapping.co.id:
+        eventSource: true
+organizations:
+  dinas.palmmapping.co.id:
+    mspid: DinasMSP
+    peers:
+      - peer0.dinas.palmmapping.co.id
+    adminPrivateKey:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/dinas.palmmapping.co.id/users/User1@dinas.palmmapping.co.id/msp/keystore/priv-key.pem
+    signedCert:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/dinas.palmmapping.co.id/users/User1@dinas.palmmapping.co.id/msp/signcerts/User1@dinas.palmmapping.co.id-cert.pem
+
+  koperasi.palmmapping.co.id:
+    mspid: KoperasiMSP
+    peers:
+      - peer0.koperasi.palmmapping.co.id
+    adminPrivateKey:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/koperasi.palmmapping.co.id/users/User1@koperasi.palmmapping.co.id/msp/keystore/priv-key.pem
+    signedCert:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/koperasi.palmmapping.co.id/users/User1@koperasi.palmmapping.co.id/msp/signcerts/User1@koperasi.palmmapping.co.id-cert.pem
+
+  petani.palmmapping.co.id:
+    mspid: PetaniMSP
+    peers:
+      - peer0.petani.palmmapping.co.id
+    # certificateAuthorities:
+    #   - ca.org2.example.com
+    adminPrivateKey:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/petani.palmmapping.co.id/users/User1@petani.palmmapping.co.id/msp/keystore/priv-key.pem
+    signedCert:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/petani.palmmapping.co.id/users/User1@petani.palmmapping.co.id/msp/signcerts/User1@petani.palmmapping.co.id-cert.pem
+      
+orderers:
+  orderer0.palmmapping-orderer-group.orderer.palmmapping.co.id:
+    url: grpcs://localhost:7030
+    grpcOptions:
+      ssl-target-name-override: orderer0.palmmapping-orderer-group.orderer.palmmapping.co.id
+    tlsCACerts:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/ordererOrganizations/orderer.palmmapping.co.id/msp/tlscacerts/tlsca.orderer.palmmapping.co.id-cert.pem
+  orderer1.palmmapping-orderer-group.orderer.palmmapping.co.id:
+    url: grpcs://localhost:7031
+    grpcOptions:
+      ssl-target-name-override: orderer1.palmmapping-orderer-group.orderer.palmmapping.co.id
+    tlsCACerts:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/ordererOrganizations/orderer.palmmapping.co.id/msp/tlscacerts/tlsca.orderer.palmmapping.co.id-cert.pem
+  orderer2.palmmapping-orderer-group.orderer.palmmapping.co.id:
+    url: grpcs://localhost:7032
+    grpcOptions:
+      ssl-target-name-override: orderer2.palmmapping-orderer-group.orderer.palmmapping.co.id
+    tlsCACerts:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/ordererOrganizations/orderer.palmmapping.co.id/msp/tlscacerts/tlsca.orderer.palmmapping.co.id-cert.pem
+
+peers:
+  peer0.dinas.palmmapping.co.id:
+    url: grpcs://localhost:7041
+    grpcOptions:
+      ssl-target-name-override: peer0.dinas.palmmapping.co.id
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/dinas.palmmapping.co.id/users/User1@dinas.palmmapping.co.id/msp/tlscacerts/tlsca.dinas.palmmapping.co.id-cert.pem
+
+  peer0.koperasi.palmmapping.co.id:
+    url: grpcs://localhost:7061
+    grpcOptions:
+      ssl-target-name-override: peer0.koperasi.palmmapping.co.id
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/koperasi.palmmapping.co.id/users/User1@koperasi.palmmapping.co.id/msp/tlscacerts/tlsca.koperasi.palmmapping.co.id-cert.pem
+ 
+  peer0.petani.palmmapping.co.id:
+    url: grpcs://localhost:7081
+    grpcOptions:
+      ssl-target-name-override: peer0.petani.palmmapping.co.id
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: ../../learn-1/fablo-target/fabric-config/crypto-config/peerOrganizations/petani.palmmapping.co.id/users/User1@petani.palmmapping.co.id/msp/tlscacerts/tlsca.petani.palmmapping.co.id-cert.pem
+   
+
+# certificateAuthorities:
+#   ca.org1.example.com:
+#     url: https://localhost:7054
+#     httpOptions:
+#       verify: false
+#     tlsCACerts:
+#       path: networks/fabric/base/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+#     registrar:
+#       - enrollId: admin
+#         enrollSecret: adminpw
+
+#   ca.org2.example.com:
+#     url: https://localhost:8054
+#     httpOptions:
+#       verify: false
+#     tlsCACerts:
+#       path: networks/fabric/base/crypto-config/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+#     registrar:
+#       - enrollId: admin
+#         enrollSecret: adminpw

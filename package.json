@@ -1,0 +1,16 @@
+{
+    "name": "learn-1",
+    "version": "1.0.0",
+    "description": "Palm Mapping Blockchain",
+    "type": "module",
+    "main": "generate-fabric-config-file.js",
+    "scripts": {
+        "start": "node generate-fabric-config-file.js"
+    },
+    "author": "ahmad mujahid ramdhani",
+    "license": "ISC",
+    "dependencies": {
+        "@hyperledger/caliper-cli": "^0.5.0",
+        "dotenv": "^16.4.5"
+    }
+}
