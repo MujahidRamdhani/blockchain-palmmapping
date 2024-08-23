@@ -497,6 +497,7 @@ public async CreatePengajuan(
          asset.statusKonfirmator = statusKonfirmator;
          asset.pesanKonfirmator = pesanKonfirmator;
          asset.updateWaktuKonfirmator =  updateWaktuKonfirmator;
+         asset.idPemetaanKebun = 'Belum dipetakan'
          asset.nipPenerbitLegalitas = 'False';
          asset.namaPenerbitLegalitas = 'False';
          asset.statusPenerbitLegalitas = 'Belum diterbitkan';
